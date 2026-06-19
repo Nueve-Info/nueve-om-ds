@@ -19,7 +19,7 @@ const STATUSES: [string, string][] = [
  *  Scroll INSIDE the box — the footer floats at the box bottom, then rests at the
  *  table's end. Prev/Next are live. This is the OM DataTable footer in miniature. */
 function StickyTableDemo() {
-  const pageSize = 12
+  const pageSize = 16
   const total = 412
   const totalPages = Math.ceil(total / pageSize)
   const [page, setPage] = React.useState(1)
@@ -34,8 +34,9 @@ function StickyTableDemo() {
     }
   })
   return (
-    <div className="w-full max-w-2xl overflow-hidden rounded-lg border border-border bg-card">
-      {/* The scroll container. Both the header and the footer are sticky to its edges. */}
+    <div className="w-full overflow-hidden rounded-lg border border-border bg-card">
+      {/* Full-width scroll container. Both the header and the footer are sticky to its edges,
+          and the footer spans the entire width — mirroring the edge-to-edge app table. */}
       <div className="max-h-80 overflow-auto">
         <table className="w-full text-sm">
           <thead className="sticky top-0 z-10 [&_th]:bg-card [&_tr]:border-b [&_tr]:border-border">
@@ -130,6 +131,11 @@ export default function TableBehaviorPage() {
         It&apos;s one rule, no JavaScript and no scroll listeners — the browser does it.
       </P>
       <UL>
+        <li>
+          <strong>Full-width &amp; flat</strong> — the bar spans the entire table width and is a flat strip:{" "}
+          <code>border-t</code> on top, no rounding and no bottom border, so it reads as part of the table
+          and sits flush against whatever&apos;s below (the page bottom, or the dev workbench) with no gap.
+        </li>
         <li>
           <strong>What sticks to what</strong> — sticky is relative to the nearest scrolling ancestor. In
           the OM shell that&apos;s the scrolling <code>&lt;main&gt;</code>; in this demo it&apos;s the{" "}
