@@ -54,6 +54,7 @@ export const nav: NavGroup[] = [
       { title: "App Shell", href: "/docs/patterns/app-shell", badge: "Updated" },
       { title: "Page Header", href: "/docs/patterns/page-header", badge: "Updated" },
       { title: "Data Table", href: "/docs/patterns/data-table", badge: "Updated" },
+      { title: "Table Behavior", href: "/docs/patterns/table-behavior", badge: "New" },
       { title: "Filter Bar", href: "/docs/patterns/filter-bar", badge: "Updated" },
       { title: "Global Search", href: "/docs/patterns/global-search", badge: "New" },
       { title: "Sidebar Sections", href: "/docs/patterns/sidebar-sections", badge: "New" },
